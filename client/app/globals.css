@@ -1,26 +1,92 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #0f3d3e;
+  color: #ffffff;
+}
+
+main {
+  max-width: 1200px;
+  margin: 30px auto;
+  background-color: #0f3d3e;
+  border-radius: 24px;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 50px;
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 800;
+}
+
+nav a {
+  margin-left: 15px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: 1px solid #0f3d3e;
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 18px;
+}
+
+nav a:hover {
+  background-color: #ffff;
+  color: #0f3d3e;
+}
+
+section:first-of-type {
+  padding: 80px 60px;
+  max-width: 600px;
+}
+
+section:first-of-type p:first-child {
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+section:first-of-type p:last-child {
+  font-size: 16px;
+  color: #d1fae5;
+}
+section:last-of-type {
+  background-color: #7aa08db5;
+  color: #111827;
+  padding: 60px;
+  border-radius: 24px 24px 0 0;
+}
+
+section h3 {
+  font-size: 26px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+article {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 12px;
+  border: 2px solid #056219;
+  background-color: #e0ede5;
+  text-align: center;
+}
+
+article h4 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 6px;
 }
