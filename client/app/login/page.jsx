@@ -11,47 +11,35 @@ export default function LoginPage() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    if (email === "student@example.com" && password === "password123") {
+    // Allow login for any non-empty credentials for now
+    if (email && password) {
       localStorage.setItem("token", "mock-jwt-token");
+      // Simulate getting a name from the email (e.g., student@... -> Student)
+      const mockName = email.split("@")[0].split(/[._]/)[0];
+      const firstName = mockName.charAt(0).toUpperCase() + mockName.slice(1);
+      localStorage.setItem("username", firstName);
 
       router.push("/dashboard");
     } else {
-      alert("Invalid credentials");
+      alert("Please enter both email and password");
     }
   };
 
   return (
-      <div className="min-h-screen flex items-center justify-center bg-[#0f3f3f]">
-        <form
-          onSubmit={handleLogin}
-          className="w-[460px] bg-[#DD750C] border-4 border-[#0b2f2f] rounded-3xl shadow-2xl px-10 py-12"
-        >
-          <h2 className="text-4xl font-bold text-center text-white mb-2">
-            Login
-          </h2>
+    <section className="auth-wrapper">
+      <div className="auth-card">
+        <h2>Welcome Back</h2>
+        <p className="subtitle">
+          Sign in to access your dashboard
+        </p>
 
-          <p className="text-center text-white/80 text-sm mb-6">
-            Enter your credentials
-          </p>
-
+        <form onSubmit={handleLogin} className="auth-form">
           <input
             type="email"
-            placeholder="Email"
+            placeholder="Email Address"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
-            className="
-            w-full
-            mb-5
-            px-4
-            py-3
-            rounded-lg
-            border border-[#1e5555]
-            text-black
-            placeholder-gray-500
-            focus:outline-none
-            focus:ring-2
-            focus:ring-teal-600
-          "
+            required
           />
 
           <input
@@ -59,44 +47,17 @@ export default function LoginPage() {
             placeholder="Password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="
-            w-full
-            mb-6
-            px-4
-            py-3
-            rounded-lg
-            border border-[#1e5555]
-            text-black
-            placeholder-gray-500
-            focus:outline-none
-            focus:ring-2
-            focus:ring-teal-600
-          "
+            required
           />
 
-          <button
-            type="submit"
-            className="
-            w-full
-            py-3
-            rounded-lg
-            bg-teal-600
-            hover:bg-teal-700
-            text-white
-            font-semibold
-            transition
-          "
-          >
-            Login
-          </button>
-
-          <p className="text-center text-sm text-white mt-5">
-            Don’t have an account?{" "}
-            <Link href="/register" className="text-teal-400 hover:underline">
-              Register
-            </Link>
-          </p>
+          <button type="submit">Login</button>
         </form>
+
+        <p className="auth-link">
+          Don’t have an account?
+          <Link href="/register">Register</Link>
+        </p>
       </div>
+    </section>
   );
 }
