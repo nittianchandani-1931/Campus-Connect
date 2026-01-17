@@ -4,9 +4,9 @@
 
 :root {
   /* Classy Theme: Dark Teal & Rich Orange */
-  --primary: #004D40;  /* Deep Teal */
+  --primary: #004D40;  
   --primary-dark: #00251a;
-  --accent: #E65100;   /* Dark Orange */
+  --accent: #E65100;   
   --accent-hover: #FF6D00;
   --white: #ffffff;
   --gray-light: #F5F7F8;
@@ -24,7 +24,7 @@ body {
   background-color: var(--gray-light);
   color: var(--gray-text);
   min-height: 100vh;
-  padding-top: 80px; /* Prevent navbar overlap */
+  padding-top: 80px; 
 }
 
 /* ... existing code ... */
@@ -38,11 +38,11 @@ body {
   align-items: center;
   justify-content: center;
   background: linear-gradient(135deg, #00251a 0%, #004D40 100%);
-  padding: 100px 20px 20px; /* Added top padding for navbar */
+  padding: 100px 20px 20px;
 }
 .nav-btn {
   padding: 10px 20px;
-  border-radius: 50px; /* Pill shape */
+  border-radius: 50px; 
   color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
   font-weight: 600;
@@ -51,7 +51,7 @@ body {
 }
 
 .nav-btn:hover, .nav-btn:active {
-  background-color: rgba(255, 255, 255, 0.1); /* Light transparent tint */
+  background-color: rgba(255, 255, 255, 0.1); 
   color: var(--accent);
 }
 
@@ -65,7 +65,7 @@ body {
 
 /* --- Auth Styles --- */
 .auth-wrapper {
-  min-height: calc(100vh - 80px); /* Adjust for navbar */
+  min-height: calc(100vh - 80px); 
   /* ... rest ... */
 }
 
@@ -260,7 +260,7 @@ body {
   left: 0;
   right: 0;
   height: 80px;
-  background: linear-gradient(to right, #004D40, #00251a); /* Premium Dark Gradient */
+  background: linear-gradient(to right, #004D40, #00251a); 
   backdrop-filter: blur(10px);
   display: flex;
   align-items: center;
@@ -300,11 +300,11 @@ body {
 .hero-section {
   padding: 100px 20px;
   text-align: center;
-  max-width: 1200px; /* Increased width for better impact */
-  margin: 24px auto 0; /* 24px visible gap from 80px navbar area */
-  border-radius: 24px; /* Modern rounded corners */
-  overflow: hidden; /* rounded corners clip the image */
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2); /* Lifted effect */
+  max-width: 1200px; 
+  margin: 24px auto 0; 
+  border-radius: 24px; 
+  overflow: hidden; 
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2); 
 }
 
 .hero-title {
@@ -364,7 +364,7 @@ body {
 /* --- Dashboard --- */
 
 .dashboard-container {
-  padding: 120px 5% 60px; /* 120px accounts for 80px navbar + 40px spacing */
+  padding: 120px 5% 60px; 
   max-width: 1400px;
   margin: 0 auto;
 }
