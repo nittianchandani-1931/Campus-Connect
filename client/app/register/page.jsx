@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function RegisterPage() {
   const [formData, setFormData] = useState({
@@ -67,8 +68,13 @@ export default function RegisterPage() {
             onChange={handleChange}
           />
 
-          <button type="submit">Register</button>
+          <button type="submit">Create Account</button>
         </form>
+
+        <p className="auth-link">
+          Already have an account?
+          <Link href="/login">Login</Link>
+        </p>
       </div>
     </section>
   );
