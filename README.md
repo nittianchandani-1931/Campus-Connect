@@ -33,26 +33,4 @@ Campus Connect is a web application designed to connect students, faculty, and a
 - **Version Control:** Git & GitHub  
 - **Other Tools:** VS Code, Git CLI  
 
----
 
-## Folder Structure
-
-```text
-CampusConnect/
-│
-├─ client/
-│   ├─ app/
-│   │   ├─ accepted/
-│   │   │   └─ page.jsx
-│   │   ├─ dashboard/
-│   │   │   └─ page.jsx
-│   │   ├─ request/
-│   │   │   └─ page.jsx
-│   │   ├─ layout.js
-│   │   ├─ globals.css
-│   │   └─ favicon.ico
-│   ├─ README.md
-│   └─ .gitignore
-│
-├─ .gitignore
-└─ README.md
