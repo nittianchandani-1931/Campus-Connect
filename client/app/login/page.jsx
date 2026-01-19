@@ -3,25 +3,32 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import { authService } from "../../services/api";
 
 export default function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const router = useRouter();
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    // Allow login for any non-empty credentials for now
-    if (email && password) {
-      localStorage.setItem("token", "mock-jwt-token");
-      // Simulate getting a name from the email (e.g., student@... -> Student)
-      const mockName = email.split("@")[0].split(/[._]/)[0];
-      const firstName = mockName.charAt(0).toUpperCase() + mockName.slice(1);
-      localStorage.setItem("username", firstName);
+    setLoading(true);
 
-      router.push("/dashboard");
-    } else {
-      alert("Please enter both email and password");
+    try {
+      const data = await authService.login(email, password);
+
+      if (data.success) {
+        localStorage.setItem("token", data.token);
+        localStorage.setItem("username", data.name);
+        localStorage.setItem("userId", data._id);
+        localStorage.setItem("role", data.role);
+        router.push("/dashboard");
+      }
+    } catch (err) {
+      alert(err.response?.data?.error || "Login Failed. Please check your credentials.");
+    } finally {
+      setLoading(false);
     }
   };
 
