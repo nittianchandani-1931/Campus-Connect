@@ -1,8 +1,12 @@
 "use client";
 
 import Link from "next/link";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
 export default function LandingPage() {
+  const router = useRouter();
+
   return (
     <main style={{ maxWidth: "100%", background: "transparent", margin: 0, borderRadius: 0 }}>
       {/* Hero Section */}
@@ -76,7 +80,7 @@ export default function LandingPage() {
         <div className="container">
           <div style={{ textAlign: "center", marginBottom: "60px" }}>
             <h2 style={{ fontSize: "36px", fontWeight: "800", color: "var(--primary-dark)", marginBottom: "16px" }}>
-              How It Works
+              How It Works?
             </h2>
             <p style={{ color: "var(--gray-text)", fontSize: "18px" }}>
               Get started in 3 simple steps
