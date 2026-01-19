@@ -2,20 +2,25 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { authService } from "../../services/api";
 
 export default function RegisterPage() {
+  const router = useRouter();
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     password: "",
     confirmPassword: "",
+    role: "REQUESTER" // Default role
   });
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (formData.password !== formData.confirmPassword) {
@@ -23,8 +28,25 @@ export default function RegisterPage() {
       return;
     }
 
-    alert("Registration Successful");
-    console.log(formData);
+    setLoading(true);
+
+    try {
+      const data = await authService.register({
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+        role: formData.role
+      });
+
+      if (data.success) {
+        alert("Registration Successful! Please login.");
+        router.push("/login");
+      }
+    } catch (err) {
+      alert(err.response?.data?.error || "Registration Failed. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
