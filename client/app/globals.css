@@ -1,6 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 :root {
   /* Classy Theme: Dark Teal & Rich Orange */
@@ -167,72 +167,75 @@ body {
 
 .auth-card {
   width: 100%;
-  max-width: 450px;
-  padding: 48px;
-  border-radius: 16px;
+  max-width: 500px;
+  padding: 60px;
+  border-radius: 24px;
   background: #ffffff;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 40px 100px -20px rgba(0, 0, 0, 0.4);
   text-align: center;
 }
 
 .auth-card h2 {
-  font-size: 32px;
-  font-weight: 800;
-  margin-bottom: 8px;
+  font-size: 36px;
+  font-weight: 900;
+  margin-bottom: 12px;
   color: #1a202c;
-  letter-spacing: -0.025em;
+  letter-spacing: -0.04em;
 }
 
 .subtitle {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--gray-text);
-  margin-bottom: 32px;
-  line-height: 1.5;
+  margin-bottom: 40px;
+  line-height: 1.6;
 }
 
 .auth-form {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 24px;
 }
 
 .auth-form input {
   width: 100%;
-  padding: 14px 16px;
-  border-radius: 12px;
-  border: 2px solid #e2e8f0;
-  font-size: 15px;
-  transition: all 0.2s ease;
-  background-color: #f7fafc;
+  padding: 16px 20px;
+  border-radius: 14px;
+  border: 2px solid #edf2f7;
+  font-size: 16px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background-color: #f8fafc;
   outline: none;
-  color: #2d3748;
+  color: #1a202c;
 }
 
 .auth-form input:focus {
   border-color: var(--primary);
   background-color: #fff;
-  box-shadow: 0 0 0 4px rgba(15, 61, 62, 0.1);
+  box-shadow: 0 0 0 5px rgba(0, 77, 64, 0.08);
+  transform: translateY(-1px);
 }
 
 .auth-form button {
   width: 100%;
-  padding: 14px;
-  margin-top: 10px;
-  border-radius: 12px;
+  padding: 18px;
+  margin-top: 15px;
+  border-radius: 14px;
   border: none;
   background: var(--primary);
   color: #fff;
-  font-size: 16px;
-  font-weight: 700;
+  font-size: 17px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   cursor: pointer;
-  transition: all 0.2s ease;
-  box-shadow: 0 4px 6px -1px rgba(15, 61, 62, 0.2);
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px -6px rgba(0, 77, 64, 0.4);
 }
 
 .auth-form button:hover {
   background: var(--primary-dark);
-  transform: translateY(-1px);
-  box-shadow: 0 10px 15px -3px rgba(15, 61, 62, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px -8px rgba(0, 77, 64, 0.5);
 }
 
 .auth-link {
@@ -261,7 +264,7 @@ body {
   right: 0;
   height: 80px;
   background: linear-gradient(to right, #004D40, #00251a); 
-  backdrop-filter: blur(10px);
+  /* backdrop-filter: blur(10px); */
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -270,11 +273,17 @@ body {
   box-shadow: 0 4px 20px rgba(0,0,0,0.2);
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: 800;
-  color: var(--primary);
-  text-decoration: none;
+/* Integrated Navbar Logo Styles */
+.navbar-logo {
+  height: 32px !important;
+  max-height: 32px !important;
+  width: auto !important;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.05);
 }
 
 .nav-links {
